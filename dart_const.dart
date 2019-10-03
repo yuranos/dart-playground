@@ -9,11 +9,11 @@ main() {
     'point': [ImmutablePoint(0, 0)],
     'line': [ImmutablePoint(1, 10), ImmutablePoint(-2, 11)],
   };
-
 }
 
 class ImmutablePoint {
   final x, y;
+
   const ImmutablePoint(this.x, this.y);
 }
 

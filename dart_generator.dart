@@ -23,8 +23,6 @@ main() async {
   recur.forEach((element) {
     print(element);
   });
-
-
 }
 
 Iterable<int> naturalsTo(int n) sync* {
@@ -49,6 +47,14 @@ Iterable naturalsDownFromWrong(n) sync* {
     //just works with Iterables. Can be yield* [5, 4, 3]
     yield n;
     for (int i in naturalsDownFromWrong(n)) {
-      yield i; }
+      yield i;
+    }
+  }
+}
+
+Iterable<int> naturalsDownFrom(int n) sync* {
+  if (n > 0) {
+    yield n;
+    yield* naturalsDownFrom(n - 1);
   }
 }

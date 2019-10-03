@@ -1,9 +1,5 @@
-import 'package:flutter/services.dart';
-
 main() {
-
   Apple("Macintosh").printMe();
-
 
 //  PECS:
 //  You can replace a consumer’s type with a supertype and a producer’s type with a subtype.
@@ -12,9 +8,7 @@ main() {
 //Allowed but is bad, can fail at runtime
   //
   List<Cat> myCats = List<Animal>();
-
 }
-
 
 //Fruit as any object in Dart has an implicit constructor
 class Apple implements Fruit {
@@ -40,16 +34,13 @@ class Fruit {
 // Initializer list sets instance variables before
 // the constructor body runs.
 class Point {
-  var x,y;
+  var x, y;
   Point.fromJson(Map<String, num> json)
       : x = json['x'],
         y = json['y'] {
     print('In Point.fromJson(): ($x, $y)');
   }
-
 }
-
-
 
 //The return type of a method in a subclass must be the
 // same type or a subtype of the return type of the method in the superclass.
@@ -59,6 +50,7 @@ class Animal {
   void chase(Animal a) {
     print("Chasing");
   }
+
   Animal get parent => Animal();
 }
 
@@ -67,12 +59,9 @@ class Cat extends Animal {
   void chase(Mouse a) {
     print("Chasing");
   }
+
   @override
   Cat get parent => Cat();
 }
 
-class Mouse extends Animal {
-
-}
-
-
+class Mouse extends Animal {}

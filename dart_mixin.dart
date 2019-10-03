@@ -1,30 +1,32 @@
 //No interface keyword
 
 main() {
-
   Apple("Macintosh").printMe();
-
 }
 
-
-class Apple with Fruit {
+class Apple extends Edible with Fruit {
   Apple(name) {
     print(name);
   }
   printMe() {
-//    if we use "implements" we can't call super method
+    //    if we use "implements" we can't call super method
+    // Seems to be Mixin over Inheritance
     super.printMe();
     print("I'm an apple");
   }
 }
 
 //Limiting usage of mixin to only Meat types
-mixin Fruit on Meat {
+mixin Fruit {
   printMe() {
     print("I'm a fruit");
   }
 }
 
-class Meat {
-
+class Edible {
+  printMe() {
+    print("I'm anything edible");
+  }
 }
+
+class Meat {}

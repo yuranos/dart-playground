@@ -3,8 +3,6 @@ main() {
   print(5 / 0);
   print(5.2 / 0);
 
-
-
 //  try {
 //    breedMoreLlamas();
 //  } on OutOfLlamasException {
@@ -17,14 +15,13 @@ main() {
 //     No specified type, handles all
 //    print('Something really unknown: $e');
 //  }
-  
+
   misbehave();
 
   throw "I'm not even an exception";
 }
 
-void buyMoreLlamas() {
-}
+void buyMoreLlamas() {}
 
 //Rethrowing exceptions. Can be used for "partial handing".
 void misbehave() {

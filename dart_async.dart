@@ -3,6 +3,7 @@ import 'dart:io';
 
 //async functions execute synchronously until the first await or return.
 main() async {
+  ///the compiler won't complain if await is removed, but the execution will move past lookUpVersion() immediately without waiting for the result.
   await lookUpVersion();
   print("I'm done");
 
