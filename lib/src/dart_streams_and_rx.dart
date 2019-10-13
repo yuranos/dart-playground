@@ -1,4 +1,5 @@
 import 'dart:async';
+
 import 'package:rxdart/rxdart.dart';
 
 //Most Dart Streams are single subscription streams,
@@ -8,11 +9,11 @@ import 'package:rxdart/rxdart.dart';
 // Flutter comes with a handy Widget called StreamBuilder.
 //https://www.burkharts.net/apps/blog/fundamentals-of-dart-streams/
 StreamController<String> streamController =
-    new StreamController.broadcast(); //Add .broadcast here
+    StreamController.broadcast(); //Add .broadcast here
 
 main() async {
 //  The controller buffers all incoming events until a subscriber is registered, but this feature should only be used in rare circumstances.
-  var controller = new StreamController<String>();
+  var controller = StreamController<String>();
 
   StreamSubscription subscription = controller.stream.listen((item) async {
     //Even regular streams seem to be parallel. justWait is called 3 times immediately and the items are emitted later.
@@ -25,7 +26,7 @@ main() async {
   controller.add("Item3");
 
   //RX
-  var streamObservable = new Observable(controller.stream);
+  var streamObservable = Observable(controller.stream);
   streamObservable.listen(print);
 }
 
